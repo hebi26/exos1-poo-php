@@ -51,7 +51,7 @@ public function row(){
   echo ('<u>'.$this->chaine.'</u><br>');
 }
 public function ita(){
-  echo ('<i>'.$this->chaine.'</i><br>');
+  echo ('<i>'.$this->chaine.'</i><br><br>');
 }
 }
 $display=new phrase();
@@ -61,6 +61,59 @@ $display->row();
 $display->ita();
 
 // ------------------------exo 4--------------------------------------------
+
+class tri {
+
+public $tab;
+
+public function __construct($tab) {
+      $this->tab=$tab;
+}
+public function trier(){
+$tabtri= $this->tab;
+sort($tabtri);
+return $tabtri;
+
+}
+}
+$mytab=new tri(array(11, -2, 4, 35, 0, 8, -9));
+var_dump($mytab->trier());
+echo ('<br>');
+
+// ----------------------------exo 5----------------------------------------
+
+class calc {
+
+  public $nbr1;
+  public $nbr2;
+
+public function __construct($un, $deux){
+  $this->nbr1=$un;
+  $this->nbr2=$deux;
+}
+public function add(){
+  $result=($this->nbr1) + ($this->nbr2);
+  echo $result.'<br>';
+}
+public function soustract(){
+  $result=($this->nbr1) - ($this->nbr2);
+  echo $result.'<br>';
+}
+public function multi(){
+  $result=($this->nbr1) * ($this->nbr2);
+  echo $result.'<br>';
+}
+public function div(){
+  $result=($this->nbr1) / ($this->nbr2);
+  echo $result.'<br>';
+}
+}
+
+$display= new calc(80, 5);
+$display->add();
+$display->soustract();
+$display->multi();
+$display->div();
 
 
  ?>
